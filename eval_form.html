@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/main.css" />
+        <title>Evaluation Submit Form</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Evalution Form</h1><hr>
+                <form action="/evaluation_form" method="post">
+                    <div class="form-group">
+                    <b>Project Name:</b> <input name="Project Name" type="text" class="form-control"/><br><br>
+
+                    <b>Evaluator Name:</b> <input name="Evaluator First Name" type="text" class="form-control" placeholder='First Name'/>
+                    <input name="Evaluator Last Name" type="text" class="form-control" placeholder='Last Name' /><br><br>
+
+                    <b>Evaluator Project Role: </b><input name="Evaluator Project Role" type="text" class="form-control"/><br>
+
+                    <hr>
+
+                    <b>Evaluee Name:</b> <input name="Evaluee First Name" type="text" class="form-control" placeholder='First Name'/>
+                    <input name="Evaluee Last Name" type="text" class="form-control" placeholder='Last Name' /><br><br>
+
+                    <b>Evaluee Project Role:</b> <input name="Evaluee Project Role" type="text" class="form-control"/><br><br>
+                    <hr>
+
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea><br><br>
+
+                    <b>Please rate the individual's efforts:</b><br>
+                    <input type="radio" name="rate1" value=5> Excellent<br>
+                    <input type="radio" name="rate1" value=4> Good<br>
+                    <input type="radio" name="rate1" value=3> Average<br>
+                    <input type="radio" name="rate1" value=2> Poor<br>
+                    <input type="radio" name="rate1" value=1> Very Poor<br>               
+                    <br>
+                    <input value="Submit" type="submit" class="btn btn-default"/>
+                    </div>
+                </form>
+        </div>
+    </body>
