@@ -4,7 +4,7 @@ from bottle import get, post, request, route, run, template, static_file
 
 @route('/evaluation_form')
 def eval_form():
-    return template('eval_form')
+    return template('views/eval_form')
 
 @route('/static/<filename>')
 def server_static(filename):
