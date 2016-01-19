@@ -9,7 +9,7 @@ def index():
 
 @route('/db-projects')
 def results():
-	full_path = os.path.abspath(__file__)
+	full_path = os.path.dirname(os.path.abspath(__file__))
 	conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 	c = conn.cursor()
 	c.execute("SELECT * FROM projects")
@@ -31,7 +31,7 @@ def eval_form():
 		comment = request.GET.get('comment','').strip()
 		rating = request.GET.get('rate','').strip()
 
-		full_path = os.path.abspath(__file__)
+		full_path = os.path.dirname(os.path.abspath(__file__))
 		conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 
 		conn.execute('''CREATE TABLE IF NOT EXISTS eval (
@@ -77,7 +77,7 @@ def volunteer_form():
 		experience = request.GET.get('experience','').strip()
 
 
-		full_path = os.path.abspath(__file__)
+		full_path = os.path.dirname(os.path.abspath(__file__))
 		conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 		conn.execute('''CREATE TABLE IF NOT EXISTS volunteer (
 		id integer PRIMARY KEY AUTOINCREMENT
@@ -122,7 +122,7 @@ def project_form():
 		due_date = request.GET.get('duedate','').strip()
 		team_size = request.GET.get('teamsize','').strip()
 
-		full_path = os.path.abspath(__file__)
+		full_path = os.path.dirname(os.path.abspath(__file__))
 		conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 		conn.execute('''CREATE TABLE IF NOT EXISTS projects (
 			id integer PRIMARY KEY AUTOINCREMENT
