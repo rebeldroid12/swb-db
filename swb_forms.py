@@ -4,7 +4,7 @@ from bottle import request, route, run, template, static_file, debug, default_ap
 #evaluation form
 @route('/', method='GET')
 def index():
-	return template('views/index')
+	return template('index')
 
 
 @route('/evaluation_form', method='GET')
@@ -43,10 +43,10 @@ def eval_form():
 		conn.commit()
 		c.close()
 
-		return template('views/thankyou')
+		return template('thankyou')
 
 	else:
-		return template('views/eval_form')
+		return template('eval_form')
 
 
 #volunteer sign up form
@@ -87,11 +87,11 @@ def volunteer_form():
 		conn.commit()
 		c.close()
 
-		return template('views/thankyou')
+		return template('thankyou')
 
 	else:
 
-		return template('views/volunteer_form')
+		return template('volunteer_form')
 
 
 
@@ -130,15 +130,15 @@ def project_form():
 		conn.commit()
 		c.close()
 
-		return template('views/thankyou')
+		return template('thankyou')
 
 	else:
 
-		return template('views/project_form')
+		return template('project_form')
 
-@route('/static/<filename>')
-def server_static(filename):
-	return static_file(filename, root='/home/rebeldroid12/swb-db/static/')
+# @route('/static/<filename>')
+# def server_static(filename):
+# 	return static_file(filename, root='/home/rebeldroid12/swb-db/static/')
 
 # debug(True)
 # run(host='localhost', port=8080, debug=True)
