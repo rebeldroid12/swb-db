@@ -2,6 +2,11 @@ import sqlite3
 from bottle import request, route, run, template, static_file, debug
 
 #evaluation form
+@route('/', method='GET')
+def index():
+	return template('views/index')
+
+
 @route('/evaluation_form', method='GET')
 def eval_form():
 
