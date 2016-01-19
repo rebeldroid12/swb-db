@@ -1,5 +1,5 @@
 import sqlite3
-from bottle import request, route, run, template, static_file, debug
+from bottle import request, route, run, template, static_file, debug, default_app
 
 #evaluation form
 @route('/', method='GET')
@@ -140,6 +140,7 @@ def project_form():
 def server_static(filename):
 	return static_file(filename, root='/home/rebeldroid12/swb-db/static/')
 
-debug(True)
-run(host='localhost', port=8080, debug=True)
+# debug(True)
+# run(host='localhost', port=8080, debug=True)
 
+application = default_app()
