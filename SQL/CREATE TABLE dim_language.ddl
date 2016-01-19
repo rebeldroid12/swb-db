@@ -1,3 +1,29 @@
+CREATE TABLE `eval` (
+  `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
+  `project_name`  TEXT,
+  `evaluator_first_name`  TEXT,
+  `evaluator_last_name` TEXT,
+  `evaluator_role`  TEXT,
+  `evaluee_first_name`  TEXT,
+  `evaluee_last_name` TEXT,
+  `evaluee_role`  TEXT,
+  `comments`  TEXT,
+  `rating`  TEXT
+);
+
+CREATE TABLE projects (
+id integer PRIMARY KEY AUTOINCREMENT
+, company text
+, contact_first_name text
+, contact_last_name text
+, project_name text
+, project_skills text
+, project_summary text
+, due_date date
+, team_size integer
+);
+
+
 CREATE TABLE dim_language
 (
   language_key integer NOT NULL,
