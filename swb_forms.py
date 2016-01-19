@@ -1,4 +1,5 @@
 import sqlite3
+import os
 from bottle import request, route, run, template, static_file, debug, default_app
 
 #evaluation form
@@ -8,7 +9,8 @@ def index():
 
 @route('/db-projects')
 def results():
-	conn = sqlite3.connect('swb.db')
+	full_path = os.path.abspath(__file__)
+	conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 	c = conn.cursor()
 	c.execute("SELECT * FROM projects")
 	projects = c.fetchall()
@@ -29,7 +31,8 @@ def eval_form():
 		comment = request.GET.get('comment','').strip()
 		rating = request.GET.get('rate','').strip()
 
-		conn = sqlite3.connect('swb.db')
+		full_path = os.path.abspath(__file__)
+		conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 
 		conn.execute('''CREATE TABLE IF NOT EXISTS eval (
 			id  INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -74,7 +77,8 @@ def volunteer_form():
 		experience = request.GET.get('experience','').strip()
 
 
-		conn = sqlite3.connect('swb.db')
+		full_path = os.path.abspath(__file__)
+		conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 		conn.execute('''CREATE TABLE IF NOT EXISTS volunteer (
 		id integer PRIMARY KEY AUTOINCREMENT
 		, email text
@@ -118,8 +122,8 @@ def project_form():
 		due_date = request.GET.get('duedate','').strip()
 		team_size = request.GET.get('teamsize','').strip()
 
-
-		conn = sqlite3.connect('swb.db')
+		full_path = os.path.abspath(__file__)
+		conn = sqlite3.connect(os.path.join(full_path, 'swb.db'))
 		conn.execute('''CREATE TABLE IF NOT EXISTS projects (
 			id integer PRIMARY KEY AUTOINCREMENT
 			, company text
