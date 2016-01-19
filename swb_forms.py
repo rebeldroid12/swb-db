@@ -6,6 +6,14 @@ from bottle import request, route, run, template, static_file, debug, default_ap
 def index():
 	return template('index')
 
+@route('/db-projects')
+def results():
+	conn = sqlite3.connect('swb.db')
+	c = conn.cursor()
+	c.execute("SELECT * FROM projects")
+	projects = c.fetchall()
+	c.close
+	return template('results', project_data = projects)
 
 @route('/evaluation_form', method='GET')
 def eval_form():
