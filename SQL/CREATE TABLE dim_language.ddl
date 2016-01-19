@@ -1,14 +1,14 @@
-CREATE TABLE `eval` (
-  `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
-  `project_name`  TEXT,
-  `evaluator_first_name`  TEXT,
-  `evaluator_last_name` TEXT,
-  `evaluator_role`  TEXT,
-  `evaluee_first_name`  TEXT,
-  `evaluee_last_name` TEXT,
-  `evaluee_role`  TEXT,
-  `comments`  TEXT,
-  `rating`  TEXT
+CREATE TABLE eval (
+  id  INTEGER PRIMARY KEY AUTOINCREMENT,
+  project_name  TEXT,
+  evaluator_first_name  TEXT,
+  evaluator_last_name TEXT,
+  evaluator_role  TEXT,
+  evaluee_first_name  TEXT,
+  evaluee_last_name TEXT,
+  evaluee_role  TEXT,
+  comments  TEXT,
+  rating  TEXT
 );
 
 CREATE TABLE projects (
@@ -23,6 +23,19 @@ id integer PRIMARY KEY AUTOINCREMENT
 , team_size integer
 );
 
+CREATE TABLE volunteer (
+    id integer PRIMARY KEY AUTOINCREMENT
+    , email text
+    , first_name text
+    , last_name text
+    , current_position text
+    , current_employer text
+    , country text
+    , state text
+    , expertise text
+    , language text
+    , experience text
+    );
 
 CREATE TABLE dim_language
 (

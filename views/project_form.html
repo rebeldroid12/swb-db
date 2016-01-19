@@ -7,24 +7,24 @@
     <body>
         <div class="container">
         <h1>Project Submit Form</h1><hr>
-                <form action="/project_form" method="post">
+                <form action="/project_form" method="GET">
                     <div class="form-group">
-                    <b>Company/Organization: </b> <input name="First Name" type="text" class="form-control"/><br>
+                    <b>Company/Organization: </b> <input name="company" type="text" class="form-control"/><br>
 
-                    <b>Contact's First Name:</b> <input name="First Name" type="text" class="form-control"/><br>
+                    <b>Contact's First Name:</b> <input name="firstname" type="text" class="form-control"/><br>
 
-                    <b>Contact's Last Name:</b> <input name="Last Name" type="text" class="form-control"/><br>
+                    <b>Contact's Last Name:</b> <input name="lastname" type="text" class="form-control"/><br>
 
-                    <b>Project Name:</b> <input name="Project Name" type="text" class="form-control"/><br>
+                    <b>Project Name:</b> <input name="project" type="text" class="form-control"/><br>
 
-                    <b>Project Summary:</b> <input name="Project Summmary" type="text" class="form-control"/><br>
+                    <b>Project Summary:</b> <input name="summary" type="text" class="form-control"/><br>
 
                     <b>Project Skill Needs:</b> <input name="skills" type="text" class="form-control"/><br>
 
-                    <b>Approximate Due Date:</b> <input name="comment" type="text" class="form-control"/><br>
+                    <b>Approximate Due Date:</b> <input name="duedate" type="date" class="form-control"/><br>
 
-                    <b>Desired Team Size (Number of individuals): <input name="rating" type="number" class="form-control"/><br>
-                    <input value="Submit" type="submit" class="btn btn-default"/>
+                    <b>Desired Team Size (Number of individuals): <input name="teamsize" type="number" class="form-control"/><br>
+                    <input value="Submit" type="submit" name="submit-data" class="btn btn-default"/>
                     </div>
                 </form>
         </div>
